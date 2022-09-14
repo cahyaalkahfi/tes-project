@@ -1,0 +1,25 @@
+name: tweet otd
+
+on:
+  schedule:
+    - cron: '5 * *'  # every 5 minutes for testing.
+    #- cron: '0 1 * *'  # once a day at 01 AM UTC (08:00 WIB).
+
+jobs:
+  publish-data:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+      TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+    steps:
+     - uses: actions/checkout@v3
+     - uses: actions/setup-python@v4
+       with:
+         python-version: '3.10' 
+         cache: 'pip'
+     - run: pip install pandas bs4 psycopg2 tweepy
+     - run: python3 tweet_otd.py
+     
