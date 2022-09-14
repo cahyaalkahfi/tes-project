@@ -20,6 +20,9 @@ jobs:
        with:
          python-version: '3.10' 
          cache: 'pip'
-     - run: pip install pandas bs4 psycopg2 tweepy
+     - run: |
+        python -m pip install --upgrade pip
+        pip install pandas bs4 psycopg2 tweepy
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
      - run: python3 tweet_otd.py
      
