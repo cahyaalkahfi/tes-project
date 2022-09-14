@@ -2,8 +2,8 @@ name: tweet TFP
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # every 5 minutes for testing.
-    #- cron: '0 1 * *'  # once a day at 01 AM UTC (08:00 WIB).
+    #- cron: '0 */2 * * *'  # every 5 minutes for testing.
+    - cron: '15 1 * *'  # once a day at 01 AM UTC (10:15 WIB).
 
 jobs:
   publish-data:
