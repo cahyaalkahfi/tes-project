@@ -3,7 +3,7 @@ name: scrap and save OTD to PGSQL
 on:
   schedule:
    # - cron: '0 */2 * * *'  # every 2 hour for testing.
-   - cron: '0 1 * *'  # once a day at 01 AM UTC (08:00 WIB).
+   - cron: '0 1 * * *'  # once a day at 01 AM UTC (08:00 WIB).
 
 jobs:
   scrap-n-save:
