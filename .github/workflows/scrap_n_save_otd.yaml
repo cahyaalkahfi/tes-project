@@ -2,7 +2,8 @@ name: Publish
 
 on:
   schedule:
-    - cron: '0 1 * *'  # once a day at 01 AM UTC (08:00 WIB).
+    - cron: '5 * *'  # once a day at 01 AM UTC (08:00 WIB).
+    #- cron: '0 1 * *'  # once a day at 01 AM UTC (08:00 WIB).
 
 jobs:
   publish-data:
