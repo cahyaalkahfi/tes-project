@@ -49,7 +49,7 @@ def main():
     )
 
     api = tweepy.API(auth)
-    
+
     tweet = data.iloc[0]['item'] + "\n" + \
         "#wikipedia #todaysfeaturedpicture"
     print(len(tweet))

@@ -1,5 +1,4 @@
 # Library to use
-
 from bs4 import BeautifulSoup as bs
 import pandas as pd
 import urllib.request as r
