@@ -1,10 +1,10 @@
-import tweepy
+from datetime import date
+import os
+import requests
 import urllib.parse as up
 import psycopg2
 import pandas as pd
-import os
-import requests
-from datetime import date
+import tweepy
 
 
 def main():
@@ -24,9 +24,7 @@ def main():
 
     cur.execute(
         """
-        SELECT *
-        FROM wikipedia_otd w
-        WHERE w.date = %s;
+        SELECT * FROM wikipedia_otd w WHERE w.date = %s;
         """,
         [today, ]
     )

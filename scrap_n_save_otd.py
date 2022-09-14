@@ -1,10 +1,10 @@
 # Library to use
 
 from bs4 import BeautifulSoup as bs
-import pandas as pd
-import urllib.request as r
 import os
+import urllib.request as ur
 import urllib.parse as up
+import pandas as pd
 import psycopg2
 import psycopg2.extras as extras
 
@@ -21,7 +21,7 @@ def remove_tags(elem):
 
 # Function to get data from "On this Day" Section
 def wiki_otd(url):
-    page = r.urlopen(url)
+    page = ur.urlopen(url)
     soup = bs(page.read())
     part_otd = soup.findChild('div', {'id': 'mp-otd'})
 
