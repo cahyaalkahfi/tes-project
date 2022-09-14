@@ -20,7 +20,10 @@ jobs:
        with:
          python-version: '3.10' 
          cache: 'pip'
-     - run: pip install pandas bs4 psycopg2
+     - run: |
+        python -m pip install --upgrade pip
+        pip install pandas bs4 psycopg2
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
      - run: python3 scrap_n_save_otd.py
      # Add new files in data folder, commit along with other modified files, push
      - name: Commit and push if it changed
