@@ -2,8 +2,7 @@ name: scrap and save TFP to PGSQL
 
 on:
   schedule:
-    # - cron: '0 */2 * * *'  # every 2 hour for testing.
-    - cron: '0 3 * * *'  # once a day at 01 AM UTC (10:00 WIB).
+    - cron: '30 2 * * *'  # once a day at 02:30 AM UTC (9:30 WIB).
 
 jobs:
   scrap-n-save:
