@@ -6,7 +6,7 @@ on:
     #- cron: '0 1 * *'  # once a day at 01 AM UTC (08:00 WIB).
 
 jobs:
-  publish-data:
+  scrap-n-save:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
