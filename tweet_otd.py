@@ -1,4 +1,5 @@
 from datetime import date
+import time
 import os
 import requests
 import urllib.parse as up
@@ -49,13 +50,23 @@ def main():
     api = tweepy.API(auth)
 
     info_w_pic = data[data['picture'].values!=None]
-
-    tweet = "Today (" + info_w_pic.iloc[0]['date'] + ") in " + \
-        info_w_pic.iloc[0]['year'] + " " + \
-        info_w_pic.iloc[0]['item'] + "\n" + \
-        "#wikipedia #wikipediaonthisday"
-
+    tweet = tweet_text(info_w_pic.iloc[0])
     tweet_with_img(api, info_w_pic.iloc[0]['picture'], tweet)
+
+    oth_info = data[data['picture'].values==None]
+
+    for idx, info in oth_info.iterrows():
+        print(info)
+        time.sleep(600)
+        tweet = tweet_text(info)
+        api.update_status(tweet)
+
+
+def tweet_text(row):
+    return "Today (" + row['date'] + ") in " + \
+        row['year'] + " " + \
+        row['item'] + "\n" + \
+        "#wikipedia #wikipediaonthisday"
 
 
 def tweet_with_img(api, url, message):
