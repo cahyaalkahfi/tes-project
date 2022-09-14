@@ -1,4 +1,4 @@
-name: tweet otd
+name: tweet OTD
 
 on:
   schedule:
