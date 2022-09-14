@@ -1,4 +1,4 @@
-name: Publish
+name: scrap and save to postgresql
 
 on:
   schedule:
