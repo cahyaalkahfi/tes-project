@@ -60,7 +60,7 @@ data = data[['date', 'year', 'item', 'picture']]
 
 # Connect to PostgreSQL DB
 up.uses_netloc.append("postgres")
-url = up.urlparse(os.getenv("DATABASE_URL"))
+url = up.urlparse(os.environ["DATABASE_URL"])
 print(url)
 conn = psycopg2.connect(database=url.path[1:],
                         user=url.username,
