@@ -50,8 +50,9 @@ def main():
     api = tweepy.API(auth)
 
     info_w_pic = data[data['picture'].values!=None]
-    tweet = tweet_text(info_w_pic.iloc[0])
-    tweet_with_img(api, info_w_pic.iloc[0]['picture'], tweet)
+    if (len(info_w_pic.index) > 0):
+        tweet = tweet_text(info_w_pic.iloc[0])
+        tweet_with_img(api, info_w_pic.iloc[0]['picture'], tweet)
 
     oth_info = data[data['picture'].values==None]
 
