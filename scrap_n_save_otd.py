@@ -46,6 +46,9 @@ def wiki_otd(url):
         elif item.find('(depicted)') != -1:
             item = item.replace('(depicted) ', '')
             pic = 'https:' + part_otd.select_one('div div img')['src']
+        elif item.find('(modern performer pictured)') != -1:
+            item = item.replace('(modern performer pictured) ', '')
+            pic = 'https:' + part_otd.select_one('div div img')['src']
 
         event[idx + 1] = {'year': year, 'item': item, 'picture': pic}
 
