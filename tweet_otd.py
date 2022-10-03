@@ -10,7 +10,7 @@ import tweepy
 
 def main():
 
-    today = date.today().strftime("%B %d")
+    today = date.today().strftime("%B %-d")
     # Connect to PostgreSQL DB
     up.uses_netloc.append("postgres")
     url = up.urlparse(os.environ["DATABASE_URL"])
