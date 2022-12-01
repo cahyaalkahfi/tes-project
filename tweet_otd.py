@@ -7,7 +7,6 @@ import psycopg2
 import pandas as pd
 import tweepy
 
-
 def main():
 
     today = date.today().strftime("%B %-d")
