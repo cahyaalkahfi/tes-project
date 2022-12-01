@@ -11,7 +11,6 @@ from datetime import date
 # Homepage Wikipedia (English)
 wikipedia_url = "https://en.wikipedia.org/wiki/Main_Page"
 
-
 # Function to get data from "Today's Featured Picture" Section
 def wiki_tfd(url):
     page = r.urlopen(url)
