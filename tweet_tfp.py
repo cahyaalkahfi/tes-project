@@ -6,7 +6,6 @@ import os
 import requests
 from datetime import date
 
-
 def main():
 
     today = date.today().strftime("%B %d, %Y")
