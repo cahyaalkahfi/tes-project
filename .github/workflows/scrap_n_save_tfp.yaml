@@ -1,4 +1,4 @@
-name: scrap and save TFP to PGSQL
+name: scrap and save Wikipedia TFP to PGSQL
 
 on:
   schedule:
