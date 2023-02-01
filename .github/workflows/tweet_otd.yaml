@@ -1,4 +1,4 @@
-name: tweet OTD
+name: tweet Wikipedia OTD
 
 on:
   schedule:
