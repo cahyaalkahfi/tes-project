@@ -1,4 +1,4 @@
-name: scrap and save OTD to PGSQL
+name: scrap and save Wikipedia OTD to PGSQL
 
 on:
   schedule:
